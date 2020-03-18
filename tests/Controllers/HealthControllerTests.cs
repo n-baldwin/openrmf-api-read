@@ -29,13 +29,15 @@ namespace tests.Controllers
         [Fact]
         public void Test_HealthControllerIsValid()
         {
-            Assert.True(_healthController != null);
+            // Testing
+            Assert.False(_healthController == null);
         }
 
         [Fact]
         public void Test_HealthControllerGetIsValid()
         {
             var result = _healthController.Get();
+
             _mocksystemGroupRepo.Setup(e => e.HealthStatus()).Returns(true);
             Assert.True(_healthController != null);
             //Assert.Equal(200, ((Microsoft.AspNetCore.Mvc.ObjectResult)result.Result).StatusCode); // returns a status code HTTP 200
